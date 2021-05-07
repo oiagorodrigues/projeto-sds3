@@ -1,25 +1,25 @@
 import Chart from 'react-apexcharts'
 
 const DonutChart = () => {
-  const options = {
+    const options = {
         legend: {
-            show: true
-        }
+            show: true,
+        },
     }
 
-  const mockData = {
+    const mockData = {
         series: [477138, 499928, 444867, 220426, 473088],
-        labels: ['Anakin', 'Barry Allen', 'Kal-El', 'Logan', 'Padmé']
+        labels: ['Anakin', 'Barry Allen', 'Kal-El', 'Logan', 'Padmé'],
     }
 
-  return (
-    <Chart
-      options={{ ...options, labels: mockData.labels }}
-      series={mockData.series}
-      type="donut"
-      height="240"
-    />
-  );
+    return (
+        <Chart
+            options={{ ...options, labels: mockData.labels }}
+            series={mockData.series}
+            type='donut'
+            height='240'
+        />
+    )
 }
 
 export default DonutChart
