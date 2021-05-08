@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from 'axios'
+import Pagination from 'components/Pagination'
 import { useEffect, useState } from 'react'
 import { SalePage } from 'types/Sale'
 import { formatLocalDate } from 'utils/format'
@@ -15,13 +16,16 @@ const DEFAULT_PAGE_VALUES: SalePage = {
 }
 
 const DataTable = () => {
+    const [activePage, setActivePage] = useState(0)
     const [page, setPage] = useState<SalePage>(DEFAULT_PAGE_VALUES)
 
     useEffect(() => {
         axios
-            .get(`${BASE_URL}/sales?page=3&sort=seller`)
+            .get(`${BASE_URL}/sales?page=${activePage}&sort=date,desc`)
             .then(({ data }: SaleResponse) => setPage(data))
-    }, [])
+    }, [activePage])
+
+    const changePage = (page: number) => setActivePage(page)
 
     return (
         <div className='table-responsive'>
@@ -47,6 +51,8 @@ const DataTable = () => {
                     ))}
                 </tbody>
             </table>
+
+            <Pagination page={page} onPageChange={changePage} />
         </div>
     )
 }
