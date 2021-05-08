@@ -1,5 +1,4 @@
 # DS Sales Project
-[![Netlify Status](https://api.netlify.com/api/v1/badges/06a6b849-8fc0-4ce6-aa7b-eddc6eb867f9/deploy-status)](https://app.netlify.com/sites/iagorodrigues-sds3/deploys)
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/devsuperior/sds1-wmazoni/blob/master/LICENSE) 
 
 # About the project
